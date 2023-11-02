@@ -1,0 +1,18 @@
+Feature: US02 - Inicio de sesión en la aplicación
+Como usuario
+Quiero iniciar sesión en la aplicación
+Para poder ver mi perfil
+
+Scenario: S1: Usuario inicia sesión de su cuenta
+    Given que el usuario abre la aplicación
+    And el usuario navega a la página de inicio de sesión
+    When el usuario introduce su <Correo> y <Contraseña>
+    And hace clic en el botón "Ingresar"
+    Then el usuario accede a la vista de su perfil
+
+    Examples: INPUT
+    | Correo                    | Contraseña    |
+    | juanperez@example.com     | miContrase123 |
+
+    Examples: OUTPUT
+    | Acceso al perfil del usuario |
