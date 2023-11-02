@@ -1,0 +1,24 @@
+Feature: US04 - Seguimiento del proceso de donación para usuarios
+Como usuaria
+Quiero estar pendiente del proceso de donación
+Para contribuir de manera efectiva y oportuna a las necesidades de los pacientes
+
+Scenario: S1: Usuario visualiza notificaciones de necesidades de donación
+    Given que la usuaria está registrada en la aplicación como donante
+    And ha ingresado a su perfil
+    When la usuaria selecciona la opción "Alertas de donación"
+    Then ve una lista de notificaciones sobre pacientes que necesitan donaciones
+
+Scenario: S2: Usuario revisa el perfil de los pacientes que necesitan donación
+    Given que la usuaria ha recibido notificaciones de pacientes que necesitan donaciones
+    When la usuaria selecciona una notificación específica
+    And hace clic en "Más información"
+    Then accede al perfil del paciente
+    And puede ver los detalles y requisitos específicos para la donación
+
+Scenario: S3: Usuario se compromete a donar
+    Given que la usuaria ha encontrado un perfil de paciente que necesita donación
+    When revisa los requisitos y ve que es compatible
+    And selecciona la opción "Comprometerse a donar"
+    Then la aplicación registra su compromiso
+    And proporciona los próximos pasos para completar la donación
