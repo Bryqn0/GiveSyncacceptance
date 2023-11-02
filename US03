@@ -1,0 +1,11 @@
+Feature: US03 - Visualización de notificaciones de donación
+Como persona donante de sangre
+Quiero visualizar los pacientes que necesitan sangre y el seguimiento de mi donación
+Para verificar si ha sido entregada a la persona correcta
+
+Scenario: S1: Visualización de las personas que necesitan donaciones
+    Given que el donante accede a su perfil en la aplicación
+    And tiene una donación programada con fecha y hora
+    When el usuario navega a la sección "Visualización de donación"
+    And selecciona la opción de hacer pública su donación
+    Then el usuario puede ver a todas las personas con su tipo de sangre que necesitan donación
