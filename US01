@@ -1,0 +1,19 @@
+Feature: US01 - Registro de aplicación
+Como usuario
+Quiero registrarme en la aplicación Givesync con mi correo
+Para guardar mis datos de perfil
+
+Scenario: S1: Registro y verificación de cuenta de usuario en la aplicación
+    Given que el usuario entra a la aplicación
+    And se dirige a la opción de registro
+    When el usuario rellena sus datos de <Nombre> <Apellido> <Correo> <Contraseña>
+    And hace clic en el botón "Registrarse"
+    Then la aplicación envía un enlace de verificación al <Correo> ingresado
+    And muestra un mensaje de activación exitosa
+
+    Examples: INPUT
+    | Nombre  | Apellido | Correo                    | Contraseña |
+    | Gabriel | Torres   | gabrieltorres@example.com | miContrase123 |
+
+    Examples: OUTPUT
+    | envío de enlace de verificación | mensaje de activación exitosa |
